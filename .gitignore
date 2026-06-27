@@ -19,3 +19,14 @@ checkpoints/
 
 # Self-signed HTTPS certificates (local dev only)
 .cert/
+
+# torch hub cache (ZoeDepth/MiDaS repos fetched at runtime)
+.torch_hub/
+
+# Cloned Depth-Anything-V2 source (auto-cloned at runtime)
+python_backend/Depth-Anything-V2/
+python_backend/Depth*/
+
+# Error logs / temp debug files
+*.err
+tmp_*.txt
