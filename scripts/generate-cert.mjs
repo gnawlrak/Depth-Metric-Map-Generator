@@ -26,9 +26,11 @@ function getLanIPs() {
   const interfaces = os.networkInterfaces();
   for (const name of Object.keys(interfaces)) {
     for (const iface of interfaces[name] || []) {
-      if (iface.family === 'IPv4' && !iface.internal) {
-        ips.push(iface.address);
-      }
+      if (iface.family !== 'IPv4' || iface.internal) continue;
+      // Skip APIPA link-local addresses (169.254.x.x) — assigned when a NIC
+      // can't reach DHCP; useless for actual communication.
+      if (iface.address.startsWith('169.254.')) continue;
+      ips.push(iface.address);
     }
   }
   return ips;

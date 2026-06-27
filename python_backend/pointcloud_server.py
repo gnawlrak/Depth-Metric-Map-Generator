@@ -19,7 +19,7 @@ from typing import Dict, Any, Optional, Tuple
 import cv2
 import numpy as np
 import requests
-from PIL import Image, ExifTags
+from PIL import Image, ExifTags, ImageOps
 from fastapi import FastAPI, File, Form, UploadFile, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse
 
@@ -287,6 +287,7 @@ async def generate(
     try:
         contents = await image.read()
         pil_img = Image.open(io.BytesIO(contents))
+        pil_img = ImageOps.exif_transpose(pil_img)
     except Exception as exc:
         logger.exception("Failed to read uploaded image")
         raise HTTPException(status_code=400, detail=f"Invalid image: {exc}")

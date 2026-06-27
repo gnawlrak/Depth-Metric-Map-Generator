@@ -3,7 +3,6 @@ import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import https from 'https';
-import os from 'os';
 import multer from 'multer';
 import { createServer as createViteServer } from 'vite';
 import { pipeline, RawImage } from '@xenova/transformers';
@@ -421,26 +420,14 @@ async function startServer() {
   // Point cloud backend proxy helpers
   // ---------------------------------------------------------------------------
 
-  function getLanIp(): string | undefined {
-    const interfaces = os.networkInterfaces();
-    for (const name of Object.keys(interfaces)) {
-      for (const iface of interfaces[name] || []) {
-        if (iface.family === 'IPv4' && !iface.internal) {
-          return iface.address;
-        }
-      }
-    }
-    return undefined;
-  }
-
-  function getPublicBaseUrl(): string {
+  function getPublicBaseUrl(req: express.Request): string {
     if (PUBLIC_POINTCLOUD_URL) {
       return PUBLIC_POINTCLOUD_URL.replace(/\/$/, '');
     }
-    const backendUrl = new URL(POINTCLOUD_BACKEND_URL);
-    const lanIp = getLanIp();
-    if (lanIp) backendUrl.hostname = lanIp;
-    return backendUrl.origin;
+    // Use the same host the browser used to reach Node, so LAN/mobile access works
+    const protocol = req.protocol === 'https' || req.get('x-forwarded-proto') === 'https' ? 'https' : 'http';
+    const host = req.get('host');
+    return `${protocol}://${host}`;
   }
 
   async function waitForPointCloudBackend(maxAttempts = 12, intervalMs = 1000): Promise<void> {
@@ -515,8 +502,10 @@ async function startServer() {
       }
 
       const data = (await response.json()) as any;
-      const publicBase = getPublicBaseUrl();
-      return res.json({ ...data, viewer_url: `${publicBase}${data.viewer_url}` });
+      const publicBase = getPublicBaseUrl(req);
+      // Rewrite backend-relative /view/{id} to Node-proxied /api/pointcloud-view/{id}
+      const viewerPath = data.viewer_url.replace('/view', '/api/pointcloud-view');
+      return res.json({ ...data, viewer_url: `${publicBase}${viewerPath}` });
     } catch (error: any) {
       console.error('Error generating point cloud:', error);
       const isDown = error?.cause?.code === 'ECONNREFUSED' || error?.message?.includes('fetch failed');
