@@ -1,0 +1,21 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Python backend
+__pycache__/
+*.py[cod]
+*.egg-info/
+.python_backend_venv/
+*.onnx
+*.pth
+python_backend/checkpoints/
+checkpoints/
+
+# Self-signed HTTPS certificates (local dev only)
+.cert/

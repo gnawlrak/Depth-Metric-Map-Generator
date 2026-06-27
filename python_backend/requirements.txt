@@ -1,0 +1,38 @@
+# Python backend for local Depth Anything V2 and Metric3D inference
+# Install with: pip install -r python_backend/requirements.txt
+
+# FastAPI server
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.9
+requests>=2.31.0
+
+# Depth Anything V2 via Hugging Face transformers
+torch>=2.1.0
+torchvision>=0.16.0
+transformers>=4.40.0
+timm>=0.9.16
+accelerate>=0.27.0
+
+# Metric3D via ONNX Runtime
+onnxruntime>=1.17.0
+
+# Image / utility
+Pillow>=10.0.0
+numpy>=1.24.0
+opencv-python>=4.8.0
+huggingface-hub>=0.20.0
+
+# ZoeDepth support (torch.hub downloads MiDaS automatically)
+matplotlib>=3.7.0
+scipy>=1.10.0
+h5py>=3.8.0
+
+# Point cloud generation
+open3d>=0.17.0
+
+# NOTE: Depth Anything V2 Metric models require the official repo cloned locally.
+# The inference server auto-clones it on first use via git.
+# Manual alternative:
+#   cd python_backend
+#   git clone --depth 1 https://github.com/DepthAnything/Depth-Anything-V2.git

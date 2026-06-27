@@ -1,0 +1,10 @@
+{
+  "name": "Remix: Depth Map Generator",
+  "description": "Convert ordinary photos into high-quality depth maps using the Depth Anything V2 Large AI model.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

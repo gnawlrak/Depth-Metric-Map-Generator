@@ -1,0 +1,202 @@
+2026-06-25 12:26:06,987 | INFO | Starting local inference backend on http://127.0.0.1:3001
+INFO:     Started server process [21992]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:3001 (Press CTRL+C to quit)
+2026-06-25 12:26:41,529 | INFO | Loading DA2 Metric Indoor Large (max_depth=20)
+2026-06-25 12:27:07,667 | WARNING | xFormers not available
+2026-06-25 12:27:07,782 | WARNING | xFormers not available
+2026-06-25 12:27:07,877 | INFO | using MLP layer as FFN
+2026-06-25 12:27:23,011 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-Hypersim-Large/resolve/main/depth_anything_v2_metric_hypersim_vitl.pth "HTTP/1.1 302 Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-25 12:27:23,084 | WARNING | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-25 12:27:25,008 | INFO | Loaded DA2 Metric Indoor Large from C:\Users\≤‚ ‘’Àªß\.cache\huggingface\hub\models--depth-anything--Depth-Anything-V2-Metric-Hypersim-Large\snapshots\79720800638389a78b2defc92caa885104f69974\depth_anything_v2_metric_hypersim_vitl.pth on cpu
+2026-06-25 12:29:38,819 | INFO | Loading Depth Anything V2 model: depth-anything/Depth-Anything-V2-Base-hf
+2026-06-25 12:29:42,269 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Base-hf/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-25 12:29:42,602 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/depth-anything/Depth-Anything-V2-Base-hf/b1958afc87fb45a9e3746cb387596094de553ed8/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]Loading weights:  66%|®Ä®Ä®Ä®Ä®Ä®Ä®Ñ   | 189/287 [00:00<00:00, 1884.18it/s]Loading weights: 100%|®Ä®Ä®Ä®Ä®Ä®Ä®Ä®Ä®Ä®Ä| 287/287 [00:00<00:00, 1725.55it/s]
+2026-06-25 12:29:43,765 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Base-hf/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-25 12:29:44,359 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Base-hf/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-25 12:29:44,759 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/depth-anything/Depth-Anything-V2-Base-hf/b1958afc87fb45a9e3746cb387596094de553ed8/preprocessor_config.json "HTTP/1.1 200 OK"
+2026-06-25 12:29:45,425 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Base-hf/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-25 12:29:46,008 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Base-hf/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-25 12:29:46,308 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/depth-anything/Depth-Anything-V2-Base-hf/b1958afc87fb45a9e3746cb387596094de553ed8/preprocessor_config.json "HTTP/1.1 200 OK"
+2026-06-25 12:29:46,876 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Base-hf/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-25 12:29:47,423 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Base-hf/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-25 12:29:48,031 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Base-hf/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-25 12:29:48,357 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/depth-anything/Depth-Anything-V2-Base-hf/b1958afc87fb45a9e3746cb387596094de553ed8/preprocessor_config.json "HTTP/1.1 200 OK"
+2026-06-25 12:29:48,388 | INFO | Loaded depth-anything/Depth-Anything-V2-Base-hf on cpu
+2026-06-25 12:29:58,147 | INFO | Loading Metric3D ONNX model: onnx-community/metric3d-vit-small
+2026-06-25 12:29:59,574 | INFO | HTTP Request: HEAD https://huggingface.co/onnx-community/metric3d-vit-small/resolve/main/onnx/model.onnx "HTTP/1.1 302 Found"
+C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\onnxruntime\capi\onnxruntime_inference_collection.py:147: UserWarning: Specified provider 'CUDAExecutionProvider' is not in available provider names.Available providers: 'AzureExecutionProvider, CPUExecutionProvider'
+  warnings.warn(
+2026-06-25 12:30:01,302 | INFO | Loaded onnx-community/metric3d-vit-small
+2026-06-25 12:37:48,509 | INFO | Loading Depth Anything V2 model: depth-anything/Depth-Anything-V2-Small-hf
+2026-06-25 12:37:49,906 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-25 12:37:50,196 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/depth-anything/Depth-Anything-V2-Small-hf/5426e4f0f36572d16453bbda7a8389317b1bef99/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]Loading weights:  67%|®Ä®Ä®Ä®Ä®Ä®Ä®É   | 193/287 [00:00<00:00, 1919.44it/s]Loading weights: 100%|®Ä®Ä®Ä®Ä®Ä®Ä®Ä®Ä®Ä®Ä| 287/287 [00:00<00:00, 2097.32it/s]
+2026-06-25 12:37:51,070 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-25 12:37:51,634 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-25 12:37:51,978 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/depth-anything/Depth-Anything-V2-Small-hf/5426e4f0f36572d16453bbda7a8389317b1bef99/preprocessor_config.json "HTTP/1.1 200 OK"
+2026-06-25 12:37:52,551 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-25 12:37:53,097 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-25 12:37:53,430 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/depth-anything/Depth-Anything-V2-Small-hf/5426e4f0f36572d16453bbda7a8389317b1bef99/preprocessor_config.json "HTTP/1.1 200 OK"
+2026-06-25 12:37:53,977 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-25 12:37:54,515 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-25 12:37:55,316 | INFO | HTTP Request: HEAD https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-25 12:37:55,604 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/depth-anything/Depth-Anything-V2-Small-hf/5426e4f0f36572d16453bbda7a8389317b1bef99/preprocessor_config.json "HTTP/1.1 200 OK"
+2026-06-25 12:37:55,642 | INFO | Loaded depth-anything/Depth-Anything-V2-Small-hf on cpu
+2026-06-25 12:41:34,451 | INFO | Loading ZoeDepth model: ZoeD_N
+2026-06-25 12:41:36,805 | WARNING | Could not pre-fetch MiDaS dependency for ZoeDepth: EOF when reading a line
+2026-06-25 12:41:39,404 | ERROR | Inference failed for model zoedepth_n
+Traceback (most recent call last):
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 702, in depth
+    result = infer_zoedepth(pil_img, model)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 538, in infer_zoedepth
+    model = load_zoedepth(model_name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 248, in load_zoedepth
+    model = torch.hub.load("isl-org/ZoeDepth", hub_name, pretrained=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 661, in load
+    repo_or_dir = _get_cache_or_reload(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 291, in _get_cache_or_reload
+    _check_repo_is_trusted(
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 376, in _check_repo_is_trusted
+    response = input(
+               ^^^^^^
+EOFError: EOF when reading a line
+2026-06-25 12:41:39,571 | INFO | Loading ZoeDepth model: ZoeD_N
+2026-06-25 12:41:41,720 | WARNING | Could not pre-fetch MiDaS dependency for ZoeDepth: EOF when reading a line
+2026-06-25 12:41:43,772 | ERROR | Inference failed for model zoedepth_n
+Traceback (most recent call last):
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 702, in depth
+    result = infer_zoedepth(pil_img, model)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 538, in infer_zoedepth
+    model = load_zoedepth(model_name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 248, in load_zoedepth
+    model = torch.hub.load("isl-org/ZoeDepth", hub_name, pretrained=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 661, in load
+    repo_or_dir = _get_cache_or_reload(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 291, in _get_cache_or_reload
+    _check_repo_is_trusted(
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 376, in _check_repo_is_trusted
+    response = input(
+               ^^^^^^
+EOFError: EOF when reading a line
+2026-06-25 12:41:43,777 | INFO | Loading ZoeDepth model: ZoeD_N
+2026-06-25 12:41:45,697 | WARNING | Could not pre-fetch MiDaS dependency for ZoeDepth: EOF when reading a line
+2026-06-25 12:41:48,550 | ERROR | Inference failed for model zoedepth_n
+Traceback (most recent call last):
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 702, in depth
+    result = infer_zoedepth(pil_img, model)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 538, in infer_zoedepth
+    model = load_zoedepth(model_name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 248, in load_zoedepth
+    model = torch.hub.load("isl-org/ZoeDepth", hub_name, pretrained=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 661, in load
+    repo_or_dir = _get_cache_or_reload(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 291, in _get_cache_or_reload
+    _check_repo_is_trusted(
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 376, in _check_repo_is_trusted
+    response = input(
+               ^^^^^^
+EOFError: EOF when reading a line
+2026-06-25 13:09:23,249 | INFO | Loading ZoeDepth model: ZoeD_N
+2026-06-25 13:09:26,298 | WARNING | Could not pre-fetch MiDaS dependency for ZoeDepth: EOF when reading a line
+2026-06-25 13:09:29,440 | ERROR | Inference failed for model zoedepth_n
+Traceback (most recent call last):
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 702, in depth
+    result = infer_zoedepth(pil_img, model)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 538, in infer_zoedepth
+    model = load_zoedepth(model_name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 248, in load_zoedepth
+    model = torch.hub.load("isl-org/ZoeDepth", hub_name, pretrained=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 661, in load
+    repo_or_dir = _get_cache_or_reload(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 291, in _get_cache_or_reload
+    _check_repo_is_trusted(
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 376, in _check_repo_is_trusted
+    response = input(
+               ^^^^^^
+EOFError: EOF when reading a line
+2026-06-25 13:09:32,363 | INFO | Loading ZoeDepth model: ZoeD_N
+2026-06-25 13:09:49,827 | WARNING | Could not pre-fetch MiDaS dependency for ZoeDepth: EOF when reading a line
+2026-06-25 13:09:51,235 | ERROR | Inference failed for model zoedepth_n
+Traceback (most recent call last):
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 702, in depth
+    result = infer_zoedepth(pil_img, model)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 538, in infer_zoedepth
+    model = load_zoedepth(model_name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 248, in load_zoedepth
+    model = torch.hub.load("isl-org/ZoeDepth", hub_name, pretrained=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 661, in load
+    repo_or_dir = _get_cache_or_reload(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 291, in _get_cache_or_reload
+    _check_repo_is_trusted(
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 376, in _check_repo_is_trusted
+    response = input(
+               ^^^^^^
+EOFError: EOF when reading a line
+2026-06-25 13:09:53,861 | INFO | Loading ZoeDepth model: ZoeD_N
+2026-06-25 13:09:56,367 | WARNING | Could not pre-fetch MiDaS dependency for ZoeDepth: EOF when reading a line
+2026-06-25 13:10:00,773 | ERROR | Inference failed for model zoedepth_n
+Traceback (most recent call last):
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 702, in depth
+    result = infer_zoedepth(pil_img, model)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 538, in infer_zoedepth
+    model = load_zoedepth(model_name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 248, in load_zoedepth
+    model = torch.hub.load("isl-org/ZoeDepth", hub_name, pretrained=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 661, in load
+    repo_or_dir = _get_cache_or_reload(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 291, in _get_cache_or_reload
+    _check_repo_is_trusted(
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 376, in _check_repo_is_trusted
+    response = input(
+               ^^^^^^
+EOFError: EOF when reading a line
+2026-06-25 13:10:03,645 | INFO | Loading ZoeDepth model: ZoeD_N
+2026-06-25 13:10:04,998 | WARNING | Could not pre-fetch MiDaS dependency for ZoeDepth: EOF when reading a line
+2026-06-25 13:10:39,347 | ERROR | Inference failed for model zoedepth_n
+Traceback (most recent call last):
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 702, in depth
+    result = infer_zoedepth(pil_img, model)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 538, in infer_zoedepth
+    model = load_zoedepth(model_name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\depth-map-generator\python_backend\inference_server.py", line 248, in load_zoedepth
+    model = torch.hub.load("isl-org/ZoeDepth", hub_name, pretrained=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 661, in load
+    repo_or_dir = _get_cache_or_reload(
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 291, in _get_cache_or_reload
+    _check_repo_is_trusted(
+  File "C:\Users\≤‚ ‘’Àªß\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\hub.py", line 376, in _check_repo_is_trusted
+    response = input(
+               ^^^^^^
+EOFError: EOF when reading a line

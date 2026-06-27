@@ -1,2 +1,54 @@
-# Depth-Metric-Map-Generator
-本项目是一个本地优先的 Web 应用，能把普通照片和实时摄像头画面转换为深度图、绝对米制距离测量和可交互的 3D 点云。它由三个服务协同：React 前端、带 JS/ONNX 兜底的 Node/Express 中转层，以及运行 Depth Anything V2、Metric3D、ZoeDepth、DA2 Metric 等模型的 Python FastAPI 后端。每个模型绑定各自预训练数据集的经验深度范围（由推理后端作为唯一数据源下发），前端结合后端返回的浮点目标点深度与 EMA 平滑来抑制实时测距中的量化抖动。支持图片和实时相机两种模式、HTTPS/局域网访问移动设备、去水印裁剪，以及基于 Three.js 的点云查看器。
+# DepthViz Pro — Local Depth Anything V2 + Metric3D Backend
+
+This app estimates depth maps locally. It supports:
+
+- **Depth Anything V2** (Small / Basic / Large)
+- **Metric3D** (ViT Small / Large) — true metric depth in meters
+
+A Python FastAPI backend runs the full PyTorch/ONNX models. The Node.js server automatically falls back to a JS/ONNX pipeline when the Python backend is not running.
+
+## Run Locally
+
+**Prerequisites:** Node.js, Python 3.10+
+
+1. Install Node dependencies:
+   ```bash
+   npm install
+   ```
+
+2. (Optional but recommended) Install Python backend dependencies:
+   ```bash
+   pip install -r python_backend/requirements.txt
+   ```
+
+3. Copy `.env.example` to `.env.local` and set any required values.
+
+4. Start the Python backend (in one terminal):
+   ```bash
+   npm run dev:python
+   ```
+
+5. Start the Node.js server (in another terminal):
+   ```bash
+   npm run dev
+   ```
+
+The app will be available at `http://localhost:3000`. The Python backend runs on `http://localhost:3001` by default (override with `PYTHON_BACKEND_URL`).
+
+## Model Selection
+
+Use the **Depth Model** dropdown in the sidebar to switch between:
+
+- `Depth Anything V2 Small`
+- `Depth Anything V2 Basic`
+- `Depth Anything V2 Large`
+- `Metric3D ViT Small`
+- `Metric3D ViT Large`
+
+Metric3D models require the Python backend. If it is not running, the server falls back to Depth Anything V2 Small via JS/ONNX and shows a notice.
+
+## Notes
+
+- First inference for a model downloads weights from Hugging Face and caches them locally.
+- Metric3D depth maps are returned in metric meters; the UI also shows min/max/mean statistics.
+- For GPU acceleration, ensure your Python environment has a CUDA-enabled `torch` and `onnxruntime-gpu`.
